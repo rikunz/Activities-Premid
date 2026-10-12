@@ -19,7 +19,9 @@ export function getVideoInfo() {
 }
 
 export function getCourseInfo() {
-  return document.querySelector('nav[aria-label="Course topics"]')?.parentElement?.querySelector('h1')?.textContent || UNKNOWN_COURSE
+  return document.querySelector('nav[aria-label="Course topics"]')?.parentElement?.querySelector('h1')?.textContent
+    || document.querySelector('h1[data-purpose=course-header-title] a')?.textContent
+    || UNKNOWN_COURSE
 }
 
 export function normalizePath(pathname: string) {
